@@ -34,26 +34,23 @@
                 // String SMTP_PASSWORD = "smtp_password";
                 // String HOST = "email-smtp.us-west-2.amazonaws.com";
 
-                // String FROM = "PleaseDoNotReplyViaEmail@navito.co.uk";
-                String FROM = "NoReply@navito.co.uk";
+                // Configure your from e-mail
+                String FROM = "YourEmail@YourSiteEmail.com";
 
-                String FROMNAME = "Navito Contact Form";
+                // Configure your from name
+                String FROMNAME = "Your From Name Here";
 
-                String TO = "mail@navito.co.uk";
+                // Configure to e-mail, where you want to receive the e-mail from the contact form
+                String TO = "YourEmail@YourToEmail.com";
 
                 // The subject line of the email
-                String SUBJECT = "Enquiry from Navito C# Contact Form";
+                String SUBJECT = "Enquiry from C# Contact Form";
 
                 // The body of the email
                 String BODY = Enquiry.Text + "\n\n" +
                               "From: " + Name.Text + "\n\n" +
                               "E-mail: " + Email.Text;
                     
-                // "Hello" + Enquiry.Text + "Test text for body message of e-mail\n" +
-                // "More text\n " +
-                // "More text " +
-                // "More text";
-
                 MailMessage mail = new MailMessage();
 
                 // mail.IsBodyHtml = true;

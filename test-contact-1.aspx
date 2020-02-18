@@ -8,7 +8,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta charset="utf-8" />
-    <title>Enquiry Form</title>   
+<title>Enquiry Form</title>   
      
     <style type="text/css">
         #form1 {
@@ -18,6 +18,9 @@
 
 
         <script language="C#" runat="server">
+
+
+
 
             // protected means access is limited to the containing class or types derived from the containing class.
             // void is the return type of the method and means it doesn't return anything
@@ -53,11 +56,6 @@
                     
                 MailMessage mail = new MailMessage();
 
-                // mail.IsBodyHtml = true;
-
-                // Not needed
-                // MailAddress from = new MailAddress(c.Email.ToString());
-
                 mail.From = new MailAddress(FROM, FROMNAME);
 
                 mail.To.Add(new MailAddress(TO));
@@ -66,7 +64,8 @@
 
                 mail.Body = BODY;
 
-                SmtpClient SmtpServer = new SmtpClient("mail.navito.co.uk");
+                // Configure your mailserver here
+                SmtpClient SmtpServer = new SmtpClient("mail.yourdomain.com");
                 SmtpServer.Send(mail);
 
 
@@ -75,20 +74,21 @@
 
                 lblMyTestLabel.Text = "Message Sent.";
 
-                // No longer needed
-                // SmtpMail.SmtpServer = "mail.navito.co.uk";
-                // SmtpMail.Send(objMM);
 
+            // End SendMail()    
             }
+
+
+
 
 
             protected void SubmitBtn_Click(object sender, EventArgs e) {
 
-
-                // lblMyTestLabel.Text = Enquiry.Text;
                 SendMail();
 
             }
+
+
 
 
 
